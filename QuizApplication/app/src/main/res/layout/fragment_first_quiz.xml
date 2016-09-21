@@ -15,7 +15,7 @@
         android:id="@+id/ans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+       >
 
         <RadioButton
             android:id="@+id/ans1"
@@ -44,4 +44,12 @@
 
     </RadioGroup>
 
+    <TextView
+        android:id="@+id/submit"
+        android:background="@android:color/white"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Swipe for the next question"/>
 </LinearLayout>
