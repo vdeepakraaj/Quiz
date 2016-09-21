@@ -1,4 +1,4 @@
-package quiz.com.quizapplication;
+package quiz.com.quizapplication.Fragment;
 
 import android.content.Context;
 import android.net.Uri;
@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import quiz.com.quizapplication.R;
 
 
 public class FirstQuizFragment extends Fragment {

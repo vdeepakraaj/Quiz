@@ -1,10 +1,9 @@
-package quiz.com.quizapplication;
+package quiz.com.quizapplication.Activity;
 
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import quiz.com.quizapplication.BaseUserInterface.BaseActivity;
+import quiz.com.quizapplication.Fragment.FirstQuizFragment;
 
 public class FirstQuizActivity extends BaseActivity {
 
