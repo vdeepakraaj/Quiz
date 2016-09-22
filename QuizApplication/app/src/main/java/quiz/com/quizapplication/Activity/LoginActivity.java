@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import quiz.com.quizapplication.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -22,6 +23,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this,this);
+
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
