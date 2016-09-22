@@ -1,5 +1,6 @@
 package quiz.com.quizapplication.Fragment;
 
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,8 +16,8 @@ import butterknife.ButterKnife;
 import quiz.com.quizapplication.R;
 
 
-public class FirstQuizFragment extends Fragment {
-    public static int mCount = 0;
+public class ThirdQuizFragment extends Fragment {
+
     @Bind(R.id.ans)
     RadioGroup mAnswerGroup;
     @Bind(R.id.ans1)
@@ -29,25 +30,32 @@ public class FirstQuizFragment extends Fragment {
     RadioButton mAnswer4;
     @Bind(R.id.submit)
     TextView mSubmit;
+    /*@Bind(R.id.finish)
+    Button mFinish;*/
+
+    public ThirdQuizFragment() {
+        // Required empty public constructor
+    }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_first_quiz, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_third_quiz, container, false);
         ButterKnife.bind(this,rootView);
         mAnswerGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 mSubmit.setVisibility(View.VISIBLE);
-                if ((checkedId == R.id.ans1)){
+                if ((checkedId == R.id.ans2)){
                     Toast.makeText(getContext(),"You are a fucker",Toast.LENGTH_LONG).show();
-                    mCount=mCount+1;
+                    FirstQuizFragment.mCount++;
                 }
             }
         });
         return rootView;
     }
+
 }

@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/holo_blue_light"
-    tools:context=".Fragment.SecondQuizFragment">
+    android:background="@android:color/holo_orange_dark"
+    tools:context=".Fragment.ThirdQuizFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Second Question"
+        android:text="Third Question"
         />
 
     <RadioGroup

@@ -13,9 +13,11 @@ import android.view.WindowManager;
 
 import com.ToxicBakery.viewpager.transforms.CubeOutTransformer;
 
-import quiz.com.quizapplication.BaseUserInterface.BaseActivity;
+import quiz.com.quizapplication.Fragment.FifthQuizFragment;
 import quiz.com.quizapplication.Fragment.FirstQuizFragment;
+import quiz.com.quizapplication.Fragment.FourthQuizFragment;
 import quiz.com.quizapplication.Fragment.SecondQuizFragment;
+import quiz.com.quizapplication.Fragment.ThirdQuizFragment;
 import quiz.com.quizapplication.R;
 
 public class FirstQuizActivity extends AppCompatActivity {
@@ -65,13 +67,22 @@ public class FirstQuizActivity extends AppCompatActivity {
                 case 1: {
                     return new SecondQuizFragment();
                 }
+                case 2: {
+                    return new ThirdQuizFragment();
+                }
+                case 3: {
+                    return new FourthQuizFragment();
+                }
+                case 4: {
+                    return new FifthQuizFragment();
+                }
                 default:
                     return new FirstQuizFragment();
             }        }
 
         @Override
         public int getCount() {
-            return 2;
+            return 5;
         }
     }
     }
