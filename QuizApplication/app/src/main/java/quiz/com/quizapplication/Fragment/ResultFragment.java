@@ -16,7 +16,7 @@ import quiz.com.quizapplication.R;
  * A simple {@link Fragment} subclass.
  */
 public class ResultFragment extends Fragment {
-    @Bind(R.id.submit)
+    @Bind(R.id.result)
     TextView mSubmit;
 
     public ResultFragment() {
@@ -31,9 +31,7 @@ public class ResultFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_result, container, false);
         ButterKnife.bind(this,rootView);
-
-        mSubmit.setText(FirstQuizFragment.mCount);
+        mSubmit.setText(String.valueOf(FirstQuizFragment.mCount));
         return rootView;
     }
-
 }
