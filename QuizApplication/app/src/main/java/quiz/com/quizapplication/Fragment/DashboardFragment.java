@@ -1,6 +1,6 @@
 package quiz.com.quizapplication.Fragment;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import quiz.com.quizapplication.Activity.FirstQuizActivity;
+import quiz.com.quizapplication.Activity.ResultActivity;
 import quiz.com.quizapplication.R;
 
 /**
@@ -57,13 +59,13 @@ public class DashboardFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.products_layout:
-                Intent intent_products = new Intent(getActivity(), FirstQuizFragment.class);
+                Intent intent_products = new Intent(getActivity(), FirstQuizActivity.class);
                 startActivity(intent_products);
                 getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
             case R.id.recycle_bin_layout:
                 if(FirstQuizFragment.mCount==5) {
-                    Intent intent_recycle = new Intent(getActivity(), SecondQuizFragment.class);
+                    Intent intent_recycle = new Intent(getActivity(), ResultActivity.class);
                     startActivity(intent_recycle);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 }

@@ -1,8 +1,9 @@
 package quiz.com.quizapplication.Activity;
 
-import android.os.Bundle;
+import android.support.v4.app.Fragment;
 
 import quiz.com.quizapplication.BaseUserInterface.BaseActivity;
+import quiz.com.quizapplication.Fragment.DashboardFragment;
 
 /**
  * Created by Deepak on 23-09-2016.
@@ -10,13 +11,11 @@ import quiz.com.quizapplication.BaseUserInterface.BaseActivity;
 
 public class DashboardActivity extends BaseActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+
 
     @Override
-    protected android.support.v4.app.Fragment createFragment() {
-        return new android.support.v4.app.Fragment();
+    protected Fragment createFragment() {
+        return new DashboardFragment();
     }
+
 }

@@ -32,6 +32,7 @@ public class SecondQuizFragment extends Fragment {
     TextView mSubmit;
     /*@Bind(R.id.finish)
     Button mFinish;*/
+    private static boolean second = false;
 
     public SecondQuizFragment() {
         // Required empty public constructor
@@ -51,7 +52,7 @@ public class SecondQuizFragment extends Fragment {
                 mSubmit.setVisibility(View.VISIBLE);
                 if ((checkedId == R.id.ans1)){
                     Toast.makeText(getContext(),"You are a fucker",Toast.LENGTH_LONG).show();
-                    FirstQuizFragment.mCount++;
+                    second = true;
                 }
             }
         });

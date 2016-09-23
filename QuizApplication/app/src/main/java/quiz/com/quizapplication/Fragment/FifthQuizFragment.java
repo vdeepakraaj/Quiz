@@ -42,12 +42,12 @@ public class FifthQuizFragment extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if ((checkedId == R.id.ans1)){
-                    FirstQuizFragment.mCount++;
                     mFinish.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getActivity(), ResultActivity.class);
                             startActivity(intent);
+                            FirstQuizFragment.mCount++;
                         }
                     });
                 }

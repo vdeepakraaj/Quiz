@@ -29,6 +29,7 @@ public class FirstQuizFragment extends Fragment {
     RadioButton mAnswer4;
     @Bind(R.id.submit)
     TextView mSubmit;
+    private static boolean first = false;
 
 
     @Override
@@ -44,8 +45,9 @@ public class FirstQuizFragment extends Fragment {
                 mSubmit.setVisibility(View.VISIBLE);
                 if ((checkedId == R.id.ans1)){
                     Toast.makeText(getContext(),"You are a fucker",Toast.LENGTH_LONG).show();
-                    mCount=mCount+1;
+                    first = true;
                 }
+
             }
         });
         return rootView;

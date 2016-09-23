@@ -22,9 +22,5 @@ public class BaseAbstractActivity extends FragmentActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-    }
-
 
 }

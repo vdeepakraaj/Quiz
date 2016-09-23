@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import quiz.com.quizapplication.Activity.DashboardActivity;
 import quiz.com.quizapplication.Activity.FirstQuizActivity;
-import quiz.com.quizapplication.Activity.LoginActivity;
 import quiz.com.quizapplication.R;
 
 /**
@@ -23,7 +23,9 @@ public class ResultFragment extends Fragment {
     @Bind(R.id.result)
     TextView mSubmit;
     @Bind(R.id.scoreButton)
-    Button mScoreButton;
+    Button mScoreButtonEqual;
+    @Bind(R.id.scoreButton1)
+    Button mScoreButtonBelow;
 
     public ResultFragment() {
         // Required empty public constructor
@@ -38,20 +40,27 @@ public class ResultFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_result, container, false);
         ButterKnife.bind(this,rootView);
         mSubmit.setText(String.valueOf(FirstQuizFragment.mCount));
-        mScoreButton.setOnClickListener(new View.OnClickListener() {
+        mScoreButtonBelow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(FirstQuizFragment.mCount<5){
+                if (FirstQuizFragment.mCount < 5) {
                     Intent intent = new Intent(getActivity(), FirstQuizActivity.class);
                     startActivity(intent);
                 }
-                else {
-                    Intent intent = new Intent(getActivity(), LoginActivity.class);
-                    startActivity(intent);
-                }
             }
-        });
+                });
 
+                mScoreButtonEqual.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (FirstQuizFragment.mCount == 5) {
+                            Intent intent = new Intent(getActivity(), DashboardActivity.class);
+                            startActivity(intent);
+                        }
+                    }
+                });
         return rootView;
-    }
-}
+            }
+        }
+
+
