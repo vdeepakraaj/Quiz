@@ -1,9 +1,9 @@
 package quiz.com.quizapplication.Fragment;
 
-import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +14,7 @@ import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import quiz.com.quizapplication.Activity.FirstQuizActivity;
-import quiz.com.quizapplication.Activity.ResultActivity;
+import quiz.com.quizapplication.Activity.VideoActivity;
 import quiz.com.quizapplication.R;
 
 /**
@@ -76,7 +76,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener{
                 String count = extras.getString("COUNT");
                 Log.v("rec",count);
                 if(Integer.parseInt(count)==5) {
-                    Intent intent_recycle = new Intent(getActivity(), ResultActivity.class);
+                    Intent intent_recycle = new Intent(getActivity(), VideoActivity.class);
                     startActivity(intent_recycle);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                     if (mp.isPlaying()) {
