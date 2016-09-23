@@ -60,7 +60,7 @@ public class VideoFragment extends Fragment /*implements SurfaceHolder.Callback,
         vidHolder.addCallback(this);
         return  rootView;*/
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_first_quiz, container, false);
+        View rootView = inflater.inflate(R.layout.video_layout, container, false);
         VideoView videoView = (VideoView) rootView.findViewById(R.id.video_view);
         MediaController mediaController = new MediaController(getActivity());
         mediaController.setAnchorView(videoView);
