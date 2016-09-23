@@ -1,14 +1,13 @@
 package quiz.com.quizapplication.Fragment;
 
-import android.media.AudioManager;
-import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 import quiz.com.quizapplication.R;
 
@@ -16,7 +15,8 @@ import quiz.com.quizapplication.R;
  * Created by Deepak on 23-09-2016.
  */
 
-public class VideoFragment extends Fragment implements SurfaceHolder.Callback, MediaPlayer.OnPreparedListener {
+public class VideoFragment extends Fragment /*implements SurfaceHolder.Callback, MediaPlayer.OnPreparedListener*/ {
+    /*private VideoView mVideoView;
     private MediaPlayer mediaPlayer;
     private SurfaceHolder vidHolder;
     private SurfaceView vidSurface;
@@ -54,10 +54,20 @@ public class VideoFragment extends Fragment implements SurfaceHolder.Callback, M
 
     @Override
     public View onCreateView(LayoutInflater inflater,  ViewGroup container,  Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_first_quiz, container, false);
+        View rootView = inflater.inflate(R.layout.video_layout, container, false);
         vidSurface = (SurfaceView) rootView.findViewById(R.id.surfView);
         vidHolder = vidSurface.getHolder();
         vidHolder.addCallback(this);
-        return  rootView;
+        return  rootView;*/
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_first_quiz, container, false);
+        VideoView videoView = (VideoView) rootView.findViewById(R.id.video_view);
+        MediaController mediaController = new MediaController(getActivity());
+        mediaController.setAnchorView(videoView);
+        videoView.setMediaController(mediaController);
+        videoView.setVideoURI(Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.video));
+        videoView.start();
+        return rootView;
     }
 }
+
