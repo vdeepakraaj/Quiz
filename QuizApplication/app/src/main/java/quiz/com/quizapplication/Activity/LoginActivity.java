@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         mLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),FirstQuizActivity.class);
+                Intent intent=new Intent(getApplicationContext(),DashboardActivity.class);
                 startActivity(intent);
 
             }

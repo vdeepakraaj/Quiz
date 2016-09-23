@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -52,14 +51,14 @@ public class FifthQuizFragment extends Fragment {
                         }
                     });
                 }
-                else {
+                /*else {
                     mFinish.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Toast.makeText(getContext(),"Please select the correct answer",Toast.LENGTH_LONG).show();
                         }
                     });
-                }
+                }*/
             }
         });
         return rootView;

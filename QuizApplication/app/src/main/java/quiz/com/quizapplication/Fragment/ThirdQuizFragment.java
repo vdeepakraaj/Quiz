@@ -49,7 +49,7 @@ public class ThirdQuizFragment extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 mSubmit.setVisibility(View.VISIBLE);
-                if ((checkedId == R.id.ans2)){
+                if ((checkedId == R.id.ans1)){
                     Toast.makeText(getContext(),"You are a fucker",Toast.LENGTH_LONG).show();
                     FirstQuizFragment.mCount++;
                 }
