@@ -32,7 +32,7 @@ public class SecondQuizFragment extends Fragment {
     TextView mSubmit;
     /*@Bind(R.id.finish)
     Button mFinish;*/
-    private static boolean second = false;
+    public static boolean second = false;
 
     public SecondQuizFragment() {
         // Required empty public constructor

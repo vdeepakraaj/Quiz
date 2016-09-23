@@ -29,6 +29,7 @@ public class FifthQuizFragment extends Fragment {
     RadioButton mAnswer4;
     @Bind(R.id.finish)
     Button mFinish;
+    public static boolean fifth = false;
 
 
     @Override
@@ -42,14 +43,8 @@ public class FifthQuizFragment extends Fragment {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if ((checkedId == R.id.ans1)){
-                    mFinish.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent = new Intent(getActivity(), ResultActivity.class);
-                            startActivity(intent);
-                            FirstQuizFragment.mCount++;
-                        }
-                    });
+                    fifth = true;
+
                 }
                 /*else {
                     mFinish.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +54,14 @@ public class FifthQuizFragment extends Fragment {
                         }
                     });
                 }*/
+            }
+        });
+
+        mFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ResultActivity.class);
+                startActivity(intent);
             }
         });
         return rootView;

@@ -4,10 +4,12 @@ package quiz.com.quizapplication.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import butterknife.Bind;
@@ -21,11 +23,12 @@ import quiz.com.quizapplication.R;
  */
 public class ResultFragment extends Fragment {
     @Bind(R.id.result)
-    TextView mSubmit;
+    EditText mSubmit;
     @Bind(R.id.scoreButton)
-    Button mScoreButtonEqual;
-    @Bind(R.id.scoreButton1)
     Button mScoreButtonBelow;
+    @Bind(R.id.scoreButton1)
+    Button mScoreButtonEqual;
+    private int count;
 
     public ResultFragment() {
         // Required empty public constructor
@@ -39,13 +42,28 @@ public class ResultFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_result, container, false);
         ButterKnife.bind(this,rootView);
-        mSubmit.setText(String.valueOf(FirstQuizFragment.mCount));
+        count = 0;
+        if(FirstQuizFragment.first){
+            count = count+1;
+        } if(SecondQuizFragment.second){
+            count = count+1;
+        } if(ThirdQuizFragment.third){
+            count = count+1;
+        } if(FourthQuizFragment.fourth){
+            count = count+1;
+        } if(FifthQuizFragment.fifth){
+            count = count+1;
+        }
         mScoreButtonBelow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (FirstQuizFragment.mCount < 5) {
+                if (count < 5) {
+                    count = 0;
+                    mSubmit.getText().clear();
+                    Log.v("count", String.valueOf(count));
                     Intent intent = new Intent(getActivity(), FirstQuizActivity.class);
                     startActivity(intent);
+                    getActivity().finish();
                 }
             }
                 });
@@ -53,12 +71,16 @@ public class ResultFragment extends Fragment {
                 mScoreButtonEqual.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (FirstQuizFragment.mCount == 5) {
+                        if (count == 5) {
+                            count = 0;
+                            mSubmit.getText().clear();
                             Intent intent = new Intent(getActivity(), DashboardActivity.class);
                             startActivity(intent);
+                            getActivity().finish();
                         }
                     }
                 });
+        mSubmit.setText(String.valueOf(count));
         return rootView;
             }
         }

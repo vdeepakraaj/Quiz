@@ -12,4 +12,8 @@ public class ResultActivity extends BaseActivity {
     protected Fragment createFragment() {
         return new ResultFragment();
     }
+
+    @Override
+    public void onBackPressed() {
+    }
 }

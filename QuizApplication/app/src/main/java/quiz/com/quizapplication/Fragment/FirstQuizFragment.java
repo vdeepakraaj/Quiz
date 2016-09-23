@@ -29,7 +29,7 @@ public class FirstQuizFragment extends Fragment {
     RadioButton mAnswer4;
     @Bind(R.id.submit)
     TextView mSubmit;
-    private static boolean first = false;
+    public static boolean first = false;
 
 
     @Override

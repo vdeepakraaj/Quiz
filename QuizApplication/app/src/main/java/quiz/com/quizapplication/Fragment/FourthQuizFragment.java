@@ -28,6 +28,7 @@ public class FourthQuizFragment extends Fragment {
     RadioButton mAnswer4;
     @Bind(R.id.submit)
     TextView mSubmit;
+    public static boolean fourth = false;
 
 
     @Override
@@ -43,7 +44,7 @@ public class FourthQuizFragment extends Fragment {
                 mSubmit.setVisibility(View.VISIBLE);
                 if ((checkedId == R.id.ans1)){
                     Toast.makeText(getContext(),"You are a fucker",Toast.LENGTH_LONG).show();
-                    FirstQuizFragment.mCount++;
+                    fourth = true;
                 }
             }
         });
