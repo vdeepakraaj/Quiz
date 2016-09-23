@@ -3,6 +3,7 @@ package quiz.com.quizapplication.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,7 +35,6 @@ public class ResultFragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -43,6 +43,7 @@ public class ResultFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_result, container, false);
         ButterKnife.bind(this,rootView);
         count = 0;
+
         if(FirstQuizFragment.first){
             count = count+1;
         } if(SecondQuizFragment.second){
@@ -75,18 +76,20 @@ public class ResultFragment extends Fragment {
                             Intent intent = new Intent(getActivity(), DashboardActivity.class);
                             intent.putExtra("COUNT", String.valueOf(count));
                             startActivity(intent);
+                            count =0;
                             mSubmit.getText().clear();
                             getActivity().finish();
                         }
                     }
                 });
+        mSubmit.setText(String.valueOf(count));
+
         return rootView;
             }
 
     @Override
     public void onResume() {
         super.onResume();
-        mSubmit.setText(String.valueOf(count));
     }
 }
 

@@ -62,6 +62,7 @@ public class FifthQuizFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ResultActivity.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
         return rootView;
