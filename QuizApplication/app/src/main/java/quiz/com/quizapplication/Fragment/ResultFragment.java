@@ -72,17 +72,22 @@ public class ResultFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         if (count == 5) {
-                            count = 0;
-                            mSubmit.getText().clear();
                             Intent intent = new Intent(getActivity(), DashboardActivity.class);
+                            intent.putExtra("COUNT", String.valueOf(count));
                             startActivity(intent);
+                            mSubmit.getText().clear();
                             getActivity().finish();
                         }
                     }
                 });
-        mSubmit.setText(String.valueOf(count));
         return rootView;
             }
-        }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mSubmit.setText(String.valueOf(count));
+    }
+}
 
 

@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,14 +63,18 @@ public class DashboardFragment extends Fragment implements View.OnClickListener{
                 getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
             case R.id.recycle_bin_layout:
-                if(FirstQuizFragment.mCount==5) {
+                Bundle extras = getActivity().getIntent().getExtras();
+                if (extras != null) {
+                String count = extras.getString("COUNT");
+                Log.v("rec",count);
+                if(Integer.parseInt(count)==5) {
                     Intent intent_recycle = new Intent(getActivity(), ResultActivity.class);
                     startActivity(intent_recycle);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 }
+                }
                 else{
                     Toast.makeText(getActivity(),"Please proceed with questions before you click this",Toast.LENGTH_LONG).show();
-
                 }
                 break;
         }
