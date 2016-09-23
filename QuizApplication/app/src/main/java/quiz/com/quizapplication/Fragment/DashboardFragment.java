@@ -28,8 +28,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener{
     LinearLayout mRecycleBin;
     @Bind(R.id.reuse_layout)
     LinearLayout mReuse;
-    @Bind(R.id.scan_product_layout)
-    LinearLayout mScanProduct;
+
     @Bind(R.id.click_here)
     LinearLayout mClickHere;
 
@@ -50,7 +49,6 @@ public class DashboardFragment extends Fragment implements View.OnClickListener{
         this.mProductList.setOnClickListener(this);
         this.mRecycleBin.setOnClickListener(this);
         this.mReuse.setOnClickListener(this);
-        this.mScanProduct.setOnClickListener(this);
         this.mClickHere.setOnClickListener(this);
         return rootView;
     }

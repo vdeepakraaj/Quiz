@@ -54,10 +54,9 @@
 
                 <LinearLayout
                     android:id="@+id/products_layout"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:layout_weight="1"
                     android:background="@color/blue"
                     android:orientation="vertical">
 
@@ -75,35 +74,18 @@
                         android:layout_gravity="center"
                         android:textSize="24sp"
                         android:textColor="#fff"
-                        android:text="Products"
+                        android:text="Questions"
                         android:id="@+id/product_id" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/reuse_layout"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_margin="4dp"
-                    android:layout_weight="1"
                     android:background="@color/blue"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:padding="24dp"
-                        android:src="@drawable/youtube" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:textSize="24sp"
-                        android:textColor="#fff"
-                        android:text="Reuse"
-                        android:id="@+id/reward" />
 
             </LinearLayout>
 </LinearLayout>
@@ -116,15 +98,15 @@
 
             <LinearLayout
                 android:id="@+id/recycle_bin_layout"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@color/blue"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_weight="1"
@@ -138,37 +120,11 @@
                     android:layout_gravity="center"
                     android:textSize="24sp"
                     android:textColor="#fff"
-                    android:text="Recycle Bin"
+                    android:text="Videos"
                     android:id="@+id/recycle_bin" />
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/scan_product_layout"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@color/blue"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:padding="24dp"
-                    android:src="@drawable/barcode"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textSize="24sp"
-                    android:textColor="#fff"
-                    android:text="Scan Product"
-                    android:id="@+id/scan_product" />
             </LinearLayout>
 
         </LinearLayout>
 
-    </LinearLayout>
