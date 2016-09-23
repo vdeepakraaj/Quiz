@@ -36,6 +36,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener{
     }
 
 
+
     /****************************************************/
     // Abstract Method Implementation
 
@@ -44,6 +45,8 @@ public class DashboardFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        mp = MediaPlayer.create(getActivity(), R.raw.song);
+        mp.start();
         View rootView = inflater.inflate(R.layout.dashboard, container, false);
         ButterKnife.bind(this, rootView);
         this.mProductList.setOnClickListener(this);
@@ -53,6 +56,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener{
         return rootView;
     }
 
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -60,12 +64,20 @@ public class DashboardFragment extends Fragment implements View.OnClickListener{
                 Intent intent_products = new Intent(getActivity(), FirstQuizActivity.class);
                 startActivity(intent_products);
                 getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                if (mp.isPlaying()) {
+
+                    mp.stop();
+                }
                 break;
             case R.id.recycle_bin_layout:
                 if(FirstQuizFragment.mCount==5) {
                     Intent intent_recycle = new Intent(getActivity(), ResultActivity.class);
                     startActivity(intent_recycle);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                    if (mp.isPlaying()) {
+
+                        mp.stop();
+                    }
                 }
                 else{
                     Toast.makeText(getActivity(),"Please proceed with questions before you click this",Toast.LENGTH_LONG).show();
